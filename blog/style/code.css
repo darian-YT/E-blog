@@ -1,0 +1,42 @@
+code {
+  font-family: monospace;
+}
+code {
+}
+
+
+article code {
+
+}
+
+
+code {
+
+}
+
+code.some-class {
+
+}
+code {
+  font-family: MyFancyCustomFont, monospace;
+  font-size: inherit;
+}
+
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #d3d3d3;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}
+s {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #cec221;
+    background-color: #f5f5db;
+    border-radius: 4px;
+}
+
