@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="blog.css" />
+  <title>Eblog</title>
+  <link rel="icon" href="../E blog.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" />
+  <link rel="stylesheet" href="style/reset.css" />
+  <link rel="stylesheet" href="style/-debug.css" />
+  <link rel="stylesheet" href="style/article.css" />
+  <link rel="stylesheet" href="style/article-figure.css" />
+  <link rel="stylesheet" href="style/article-text.css" />
+  <link rel="stylesheet" href="style/code.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Eblog</div>
+    <input type="checkbox" id="click" />
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a href="../index.html">主頁面</a></li>
+      <li><a href="../about.html">關於我</a></li>
+      <li><a class="active" href="blog.html">文章</a></li>
+      <li><a href="../report.html">回報問題</a></li>
+      <li><a href="../revision.html">更新紀錄</a></li>
+    </ul>
+  </nav>
+  <div>
+    <article id="python1-2.html">
+      <h1><a href="python1-2.html">Python入門教學(MacOS,Linux版本)</a></h1>
+      <time datetime="02-12-2022">FEB. 12, 2022</time>
+      <h3><a href="python1-1.html">點此前往Windows版本</a></h3>
+      <p>
+        Python是一門在2021快速竄升的程式語言，到2022仍然十分熱門，今天就要來帶大家認識Python!
+      </p>
+      <p>
+        當我們想讓Python做些事情時，就必須下達指令給它，而Python不像我們平常說的話，而是要使用特別的語法。
+      </p>
+      <h2>Python Shell</h2>
+      <p>
+        剛開始學Python的時候，通常會使用終端機(Terminal)來和Python溝通。有兩種方法：
+        <br />
+        1:一次要求Python執行一個指令，這和Siri與Google小姐有點像。我們輸入一條指令，叫Python做一件事情，
+        然後Python會回答一件事(或者執行你要求的指令)。我們會把這種方式叫做「互動模式」。
+        <br />
+        2:把所有想讓Python寫在一個檔案內，這像是一個指令集。如果非常清楚想讓Python做什麼事，
+        就可以把所有想做的事寫在檔案內，這樣在使用自行編寫Python工具時，就不需要讓Python一個指令一個動作，
+        只要把想做的事情寫下來，其他就一切交給Python搞定。
+      </p>
+      <p>
+        我們在撰寫Python的工具時，通常會使用第2種方式，我們總不能在急須使用工具時還使用方法1慢慢寫吧!
+        但是在這篇文章裡面，我們會使用方法1練習語法。在下篇文章就會使用方法2來轉寫Python來撰寫文章，敬請期待~
+      </p>
+      <p>
+        進入互動模式的方法，是打開終端機，輸入下面的指令:<br />
+        python3<br />
+        再按下Enter鍵後，會出現與以下內容類似:<br />
+        <code>
+        Python 3.4.1 (...)<br/>
+        Type "copyright", "credits" or "license" for more information.<br/>
+        >>><br/>
+        </code>
+        這代表Python已經在準備接受你的命令了，進入了<s>Python Shell</s>。當我們要使用互動模式時，
+        都必須在這個<s>Python Shell</s>中進行。最後一行的<s>>>></s>代表它已經準備接受你的下一個命令。
+      </p>
+      <p>
+        在任何時候，只要你看到<s>>>></s>符號，就可以輸入<s>exit()</s>並按Enter，以退出Python shell，回到原本的終端機。
+        接著只要再輸入一次:<br />
+        python3<br />
+        <br />
+        就會重新回到Python Shell。不過要注意，Python「不會」自動幫你記住之前的資料，
+        所以如果你退出Python Shell，之前輸入過的東西就全部會消失不見。
+        <p />
+      <h2>第一個Python指令</h2>
+      <p>
+        我們來讓Python執行幾個指令看看。試著輸入1 + 1，然後按Enter鍵。你將會看到以下的結果：<br />
+        <code>
+        >>> 1 + 1<br/>
+        2<br/>
+        </code>
+        這就是Python互動模式的標準流程。你問Python一個問題，然後它會告訴你問題的答案。<br /><br />
+        Python畢竟是電腦程式，這種簡單計算當然難不倒它。試試看一些稍微難一點的計算吧!下面是幾個例子:<br />
+        9 * 9<br />
+        50 / (150 / 30) * 5<br />
+        2 ** 4<br />
+        上面計算式的符號各代表什麼意思，多試試幾個式子，看看能不能靠自己找出答案~<br />
+        <answer>
+          解答：Python 除了加減乘除外，還懂得一些比較不常見的計算符號。例如 ** 代表「次方」，所以 2 ** 4 就是「2 的 4 次方」，
+          也就是 2 * 2 * 2 * 2= 16。
+        </answer>
+        <p />
+      <h2>字串(String)</h2>
+      <p>除了數字之外，Python還可以處理文字內容，試是看輸入你自己的名字:<br />
+        <code>
+        >>>'I am E'<br/>
+        'I am E'<br/>
+        </code>
+        加號(+)可以讓兩個字串相加在一起:<br />
+        <code>
+        >>>'I am E, ' + 'I am a blogger.'<br/>
+        'I am E, I am a blogger.'<br/>
+        </code>
+        還有乘號(*)可以讓字串重複:<br />
+        <code>
+        >>>'I am E ' * 3<br/>
+        'I am E I am E I am E'<br/>
+        </code>
+        還有更複雜的:<br />
+        <code>
+        >>>'I am E, I am a blogger.' + 'E~~~ ' * 3<br/>
+        'I am E, I am a blogger.E~~~ E~~~ E~~~ '<br/>
+        </code>
+      </p>
+      <h2>函式(Function)</h2>
+      <p>
+        函式?不是韓式泡菜的韓式啦，函式是Python建立的一些捷徑，如果需要使用函式，會使用以下的寫法:<br />
+        函式名(受詞)<br />
+        如果想要知道字串的長度可以使用<s>len</s>函式，寫法是:<br />
+        <code>
+        len(要放的字串)<br/>
+        </code>
+        <br />
+        <br />
+        本次的分享就到這邊，我是E，掰掰~
+      </p>
+  </div>
+</body>
+
+</html>

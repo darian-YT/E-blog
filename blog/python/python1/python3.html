@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../sidebar.css" />
+    <title>Eblog</title>
+    <link rel="icon" href="../../../E blog.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" />
+    <link rel="stylesheet" href="../../style/reset.css" />
+    <link rel="stylesheet" href="../../style/-debug.css" />
+    <link rel="stylesheet" href="../../style/article.css" />
+    <link rel="stylesheet" href="../../style/article-figure.css" />
+    <link rel="stylesheet" href="../../style/article-text.css" />
+    <link rel="stylesheet" href="../../style/code.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Eblog</div>
+        <input type="checkbox" id="click" />
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="../../../index.html">主頁面</a></li>
+            <li><a href="../../../about.html">關於我</a></li>
+            <li><a class="active" href="../../blog.html">文章</a></li>
+            <li><a href="../../../report.html">回報問題</a></li>
+            <li><a href="../../../revision.html">更新紀錄</a></li>
+        </ul>
+    </nav>
+    <div>
+        <article id="python3.html">
+            <h1><a href="python3.html">Python入門教學EP3</a></h1>
+            <time datetime="03-27-2022">MAR. 27, 2022</time>
+            <h3>此篇文章通用於大部分作業系統</h3>
+            <h2>浮點數(float)</h2>
+            <p>
+                Python 本身就有不少內建的資料型態。前面提過了<s>str</s>和<s>int</s>，我們首先來看看浮點數。<br />
+                <answer>補充:浮點數就是有小數點的數ex.1.2,0.5</answer><br />
+                浮點數的用法有很多，int能做的，浮點數幾乎也可以做，像是計算:<br />
+                <code>>>>2.8 + 0.1<br/>
+                2.9</code><br />
+                也可以裝入變數:<br />
+                <code>>>>num = 1.1<br/>
+                >>>num<br/>
+                1.1</code><br />
+                實驗:把浮點數放入<s>int()</s>函數中，答案是否與你想的一樣:<br />
+                <code>>>>int(1.9)<br/>
+                1</code><br />
+                欸~怎麼會是1呢，原來int函數是使用無條件捨去法，才會使答案為1。
+            </p>
+            <h2>串列(List)</h2>
+            <p>再來看看串列吧~<s>list</s>顧名思義，是東西的列表。<br />
+                我們來嘗試建立一個串列:<br />
+                <code>>>>[]<br/>
+                []</code><br />
+                對!它是空的，那我們要怎麼放資料到串列裡呢?<br />
+                我們來試試看裝入20以內的質數好了:<br />
+                <code>prime_number = [2, 3, 5, 7, 11, 13, 17, 19]</code><br />
+                這樣就創建完一個<s>list</s>了<br />
+                我們一樣可以用<s>len()</s>函數來檢測list中的長度:<br />
+                <code>>>>len(prime_number)</code><br /><br />
+                如果想把<s>list</s>內的資料提取出來，可以使用中括號(<s>[]</s>)告訴list我們要期中第幾個物品。
+                在電腦裡，事情是從0開始，因此最前面的東西是第0個:
+                <code>>>>prime_number[0]<br/>
+                2<br/>
+                >>> prime_number[1]<br/>
+                3</code><br />
+                也可以從後面數回來:<br />
+                <code>>>>prime_number[-1]<br/>
+                19<br/>
+                >>> prime_number[-2]<br/>
+                17</code><br />
+                <answer>tips:因為<s>-0</s>跟<s>0</s>相等，所以從後面數時
+                    ，必須從<s>-1</s>開始
+                </answer>
+                串列跟前面提到的int,float,str一樣，它也可以被修改。如果我們要把<s>prime_number list</s>
+                的2改成1，需要這樣寫:<br />
+                <code>>>>prime_number[0] = 1
+                </code><br />
+                我們在複查一次內容:<br />
+                <code>>>>prime_number<br/>
+                [1, 3, 5, 7, 11, 13, 17 , 19]</code><br />
+                list的第一項確實改變了!
+            </p>
+            <h2>字典(Dictionary 簡稱<s>dict</s>)</h2>
+            <p>字典跟串列很像，都可以存放複數個資料，但是字典是用來儲存資料間對應的關係，
+                就像是字典內有<s>單字</s>和<s>語義</s>一樣。空的字典長這個樣子:<br />
+                <code>>>>{}<br/>{}</code><br />
+                我們來用一個字典紀錄你的個人資料做為練習。像底下這樣(記得把資料換成你自己的!):<br />
+                <code>>>>information = {'name': 'E', 'like_num': [1 ,2], 'country':Taiwan, 'favorite_food': 'chocolate'}
+                </code><br />
+                字典內會包含多個<s>鍵(key)</s>和<s>值(valse)</s>的組合。在這個範例中，
+                我們在<s>information</s>這個<s>dict</s>內建立了4樣項目:<br />
+                。<s>name</s>對應了<s>'E'</s> >資料為str<br />
+                。<s>like_num</s>對應<s>1, 2</s> >資料為list,內有兩個int<br />
+                。<s>country</s>指向<s>'Taiwan'</s> >資料為str<br />
+                。<s>favorite_food</s>指向<s>'chocolate'</s> >資料為str<br /><br />
+                如果想檢查<s>dict</s>中某一個key對應到的value，要使用這個語法:<br />
+                <code>>>>information['name']<br/>
+                'E'</code><br />
+                和<s>list</s>差不多，但用dict時，要用key呼叫，而非順序。<br /><br />
+                如果一個dict沒有某個value，我們依舊詢問Python，它會怎麼處理?<br />
+                <code>>>> my_information['age']<br/>
+                    Traceback (most recent call last):<br/>
+                      File "< stdin>", line 1, in < module><br/>
+                    KeyError: 'age'<br/>
+                </code>
+                呃...又是錯誤!?這次Python給我們新的Error!叫做<s>KeyError</s>，
+                並告訴我們是哪個key出了問題:<s>age</s>並不存在於前面的dict內。<br /><br />
+                前面的list可以用<s>len</s>來查看有多少資料，dict當然也可以:<br />
+                <code>>>>len(information)<br/>
+                4</code>
+                dict跟list一樣是可變物件。如果要再新增一個key，就要用以下語法:<br />
+                <code>>>>information['favorite_color'] = 'skyblue'<br/>
+                      >>>information<br/>
+                      {'name': 'E', 'like_num': [1 ,2], 'country':Taiwan, 'favorite_food': 'chocolate', 'favorite_color': 'skyblue'}
+                </code><br /><br />
+                若想刪除裡面的資料，則可以使用<s>del</s>(縮寫自delete):<br />
+                <code>>>>del information['favorite_color']<br/>
+                >>>information<br/>
+                {'name': 'E', 'like_num': [1 ,2], 'country':Taiwan, 'favorite_food': 'chocolate'}
+                </code><br /><br />
+                或者，如果想修改某個key所對應的值，也沒有問題:
+                <code>>>>information['favorite_food'] = 'icecream'<br/>
+                >>>information<br/>
+                {'name': 'E', 'like_num': [1 ,2], 'country':Taiwan, 'favorite_food': 'icecream'}
+                </code><br /><br />
+                看完list和dict後，我們可以發現它們有極高的相似度，都可以整理複數資料。
+                那我們什麼時候要用哪一種呢?<br />
+                。資料需要順序-><s>list</s>
+                。資料之間要有對應關係，方便查詢-><s>dict</s>
+            </p>
+            <p>本次的分享就到這邊，我是E，掰掰~</p>
